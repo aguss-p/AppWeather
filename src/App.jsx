@@ -15,7 +15,7 @@ const App = () => {
             return ({...allWeather,...weatherCity })
         })
     }), [setAllWeather])
-
+// comentario
     return (
         <Router>
             <Switch>
