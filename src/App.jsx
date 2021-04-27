@@ -8,14 +8,6 @@ import CityPage from './pages/CityPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 const App = () => {
-    const initialvalue={
-
-    }
-    const reducer = () => {
-
-    }
-    const [state, dispatch] = useReducer(reducer, initialValue)
-/*
     const [allWeather, setAllWeather] = useState({})
     const [allChartData, setAllChartData] = useState({})
     const [allForecastItemList, setForecastItemList] = useState({})
@@ -50,7 +42,7 @@ const App = () => {
             allForecastItemList
         }
     ), [allWeather,allChartData,allForecastItemList])
-*/
+
 // comentario
     return (
         <Router>
