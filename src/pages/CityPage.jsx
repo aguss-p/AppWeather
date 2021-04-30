@@ -11,8 +11,13 @@ import useCityPage from './../hooks/useCityPage'
 import useCityList from './../hooks/useCityList'
 import { getCityCode } from './../utils/utils'
 import { getCountryNameByCountryCode } from './../utils/serviceCities'
+import  {useWeatherDispatchContext,
+    useWeatherStateContext} from '../WeatherContext'
 
-const CityPage = ({actions, data}) => {
+
+const CityPage = () => {
+    const actions = useWeatherDispatchContext()
+    const data = useWeatherStateContext()
 
     const { allWeather, allChartData, allForecastItemList } = data
     //const {onSetAllWeather, onSetChartData, onSetForecastItemList,} = actions

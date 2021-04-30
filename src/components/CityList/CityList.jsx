@@ -8,6 +8,9 @@ import useCityList from './../../hooks/useCityList'
 import CityInfo from './../CityInfo'
 import Weather from './../Weather'
 import {getCityCode} from './../../utils/utils'
+import  {useWeatherDispatchContext,
+    useWeatherStateContext} from '../../WeatherContext'
+
 
 const CityListItem= React.memo(function CityListItem({ city, countryCode, country,weather,eventOnClickCity }) {
     return (
@@ -55,11 +58,15 @@ const renderCityAndCountry = eventOnClickCity => (cityAndCountry, weather) => {
 
 // cities: es un array, y en cada item tiene que tener la ciudad, pero además el country
 // ul: tag html para listas no ordenadas
-const CityList = ({ cities, onClickCity, actions , data }) => {
+const CityList = ({ cities, onClickCity}) => {
+    const actions = useWeatherDispatchContext()
+    const data = useWeatherStateContext()
+
     const {allWeather} = data
     //const { onSetAllWeather } = actions
     
     const {error, setError} = useCityList(cities, allWeather,actions)
+
     return (
         <div>
             {
